@@ -15,6 +15,7 @@
 		A61BE5631C226821003179A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A61BE5611C226821003179A8 /* LaunchScreen.storyboard */; };
 		A61BE56E1C226821003179A8 /* CPSelectDatePickerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A61BE56D1C226821003179A8 /* CPSelectDatePickerDemoTests.m */; };
 		A61BE5791C226821003179A8 /* CPSelectDatePickerDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A61BE5781C226821003179A8 /* CPSelectDatePickerDemoUITests.m */; };
+		A61BE5891C22683A003179A8 /* CPSelectDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A61BE5881C22683A003179A8 /* CPSelectDatePicker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		A61BE5741C226821003179A8 /* CPSelectDatePickerDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CPSelectDatePickerDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A61BE5781C226821003179A8 /* CPSelectDatePickerDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPSelectDatePickerDemoUITests.m; sourceTree = "<group>"; };
 		A61BE57A1C226821003179A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A61BE5871C22683A003179A8 /* CPSelectDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPSelectDatePicker.h; sourceTree = "<group>"; };
+		A61BE5881C22683A003179A8 /* CPSelectDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPSelectDatePicker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 		A61BE5521C226821003179A8 /* CPSelectDatePickerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A61BE5861C22683A003179A8 /* CPSelectDatePicker */,
 				A61BE5561C226821003179A8 /* AppDelegate.h */,
 				A61BE5571C226821003179A8 /* AppDelegate.m */,
 				A61BE5591C226821003179A8 /* ViewController.h */,
@@ -138,6 +142,15 @@
 				A61BE57A1C226821003179A8 /* Info.plist */,
 			);
 			path = CPSelectDatePickerDemoUITests;
+			sourceTree = "<group>";
+		};
+		A61BE5861C22683A003179A8 /* CPSelectDatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				A61BE5871C22683A003179A8 /* CPSelectDatePicker.h */,
+				A61BE5881C22683A003179A8 /* CPSelectDatePicker.m */,
+			);
+			path = CPSelectDatePicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +285,7 @@
 			files = (
 				A61BE55B1C226821003179A8 /* ViewController.m in Sources */,
 				A61BE5581C226821003179A8 /* AppDelegate.m in Sources */,
+				A61BE5891C22683A003179A8 /* CPSelectDatePicker.m in Sources */,
 				A61BE5551C226821003179A8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
