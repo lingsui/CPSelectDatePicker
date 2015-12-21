@@ -28,6 +28,9 @@
 @property (nonatomic,strong) UIView *selectDatePickerView;
 @property (nonatomic,strong) UIButton *hideButton;
 @property (nonatomic,strong) UIButton *confirmButton;
+@property (nonatomic,strong) UIView *searaptorLineView1;
+@property (nonatomic,strong) UIView *searaptorLineView2;
+
 //系统
 @property (nonatomic,strong) UIDatePicker *datePicker;
 //自定义
@@ -55,7 +58,7 @@ const NSInteger numberOfComponents = 2;
         //初始化自定义参数
         [self initDefautsParameters];
         
-        _view = [[UIApplication sharedApplication].delegate window].rootViewController.view;
+        _view = [self getTopViewController].view;
         _view.userInteractionEnabled = YES;
         //背景遮罩层
         _bgButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, kWinW, kWinH)];
@@ -78,9 +81,9 @@ const NSInteger numberOfComponents = 2;
         [_selectDatePickerView addSubview:_hideButton];
         
         //分隔线
-        UIView *separatorView1 = [[UIView alloc]initWithFrame:CGRectMake(kWinW / 2, 0, 1, 40)];
-        separatorView1.backgroundColor = [UIColor grayColor];
-        [_selectDatePickerView addSubview:separatorView1];
+        _searaptorLineView1 = [[UIView alloc]initWithFrame:CGRectMake(kWinW / 2, 0, 1, 40)];
+        _searaptorLineView1.backgroundColor = [UIColor grayColor];
+        [_selectDatePickerView addSubview:_searaptorLineView1];
         
         //确认按钮
         _confirmButton = [[UIButton alloc]initWithFrame:CGRectMake(kWinW / 2, 5, kWinW / 2, 30)];
@@ -90,9 +93,9 @@ const NSInteger numberOfComponents = 2;
         [_selectDatePickerView addSubview:_confirmButton];
         
         //分隔线
-        UIView *separatorView2 = [[UIView alloc]initWithFrame:CGRectMake(0, 39, kWinW, 1)];
-        separatorView2.backgroundColor = [UIColor grayColor];
-        [_selectDatePickerView addSubview:separatorView2];
+        _searaptorLineView2 = [[UIView alloc]initWithFrame:CGRectMake(0, 39, kWinW, 1)];
+        _searaptorLineView2.backgroundColor = [UIColor grayColor];
+        [_selectDatePickerView addSubview:_searaptorLineView2];
         
         //系统时间选择控件
         _datePicker = [[UIDatePicker alloc]initWithFrame:CGRectMake(0, 40, kWinW, kSPVH - 40)];
@@ -150,6 +153,10 @@ const NSInteger numberOfComponents = 2;
     [_confirmButton setTitleColor:buttonColor forState:UIControlStateNormal];
 }
 
+- (void)setSearaptorLineColor:(UIColor *)searaptorLineColor{
+    _searaptorLineView1.backgroundColor = searaptorLineColor;
+    _searaptorLineView2.backgroundColor = searaptorLineColor;
+}
 
 
 #pragma mark action
@@ -468,6 +475,25 @@ const NSInteger numberOfComponents = 2;
     _selectBlock = selectDateBlock;
     
 }
+
+#pragma mark - private
+
+-(UIViewController *)getTopViewController{
+    UIViewController *topVC = [[[UIApplication sharedApplication].windows objectAtIndex:0] rootViewController];
+    while (topVC.presentedViewController) {
+        topVC = topVC.presentedViewController;
+    }
+    if([topVC isKindOfClass:[UINavigationController class]]){
+        UINavigationController *nav = (UINavigationController *)topVC;
+        topVC = [nav.viewControllers lastObject];
+    }
+    if ([topVC isKindOfClass:[UITabBarController class]]) {
+        UITabBarController *tabVC = (UITabBarController *)topVC;
+        topVC = tabVC.selectedViewController;
+    }
+    return topVC;
+}
+
 
 
 @end
