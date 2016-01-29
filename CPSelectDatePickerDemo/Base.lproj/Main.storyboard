@@ -57,6 +57,14 @@
                                     <action selector="customStyle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Oh-y3-e9y"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Sa-0T-6X1">
+                                <rect key="frame" x="271" y="319" width="60" height="30"/>
+                                <animations/>
+                                <state key="normal" title="数组选择"/>
+                                <connections>
+                                    <action selector="selectArray:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a7b-0S-Cs1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

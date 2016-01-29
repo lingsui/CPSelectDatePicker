@@ -158,7 +158,13 @@ const NSInteger numberOfComponents = 2;
     _searaptorLineView2.backgroundColor = searaptorLineColor;
 }
 
+-(void)setIsAfterTime:(BOOL)isAfterTime{
+    if (!isAfterTime) {
+        [_datePicker setMaximumDate:[NSDate date]];
+    }
+}
 
+ 
 #pragma mark action
 - (void)cp_dismissSelectDatePicker{
     
@@ -219,6 +225,7 @@ const NSInteger numberOfComponents = 2;
     self.yearSelectedFont = [UIFont boldSystemFontOfSize:17];
     self.yearFont = [UIFont boldSystemFontOfSize:17];
 
+    self.isAfterTime = YES;
 
 }
 

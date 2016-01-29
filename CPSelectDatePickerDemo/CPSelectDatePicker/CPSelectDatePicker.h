@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger,CPSelectDatePickerMode) {
     CPSelectDatePickerModeTime,
@@ -20,9 +21,12 @@ typedef void(^selectDateBlock)(NSDate *selectDateTime);
 
 @interface CPSelectDatePicker : NSObject
 @property(nonatomic,strong) UIColor *buttonColor;// 取消和确认 按钮颜色
-@property(nonatomic,strong) UIColor *searaptorLineColor;// 取消和确认 按钮颜色
+@property(nonatomic,strong) UIColor *searaptorLineColor;// 分割线 按钮颜色
 
 @property(nonatomic,assign) CPSelectDatePickerMode selectDatePickerMode; //日期选择样式
+
+///是否可选择当前时间之后的时间,默认为可以 YES
+@property (nonatomic,assign) BOOL isAfterTime;
 
 @property (nonatomic, strong) UIColor *monthSelectedTextColor;
 @property (nonatomic, strong) UIColor *monthTextColor;

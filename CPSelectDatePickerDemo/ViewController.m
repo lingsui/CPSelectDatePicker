@@ -8,10 +8,12 @@
 
 #import "ViewController.h"
 #import "CPSelectDatePicker.h"
+#import "CPPickerView.h"
 
 @interface ViewController ()
 
 @property (nonatomic,strong)CPSelectDatePicker *selectDatePicker;
+@property (nonatomic,strong) CPPickerView *leaveTypePickerView;
 
 @end
 
@@ -71,6 +73,14 @@
         
         NSLog(@"---------%@-----------",selectDateTime);
         
+    }];
+}
+- (IBAction)selectArray:(id)sender {
+     __block   NSArray *nameAry = @[@"曹操",@"刘备",@"孙权"];
+    
+    _leaveTypePickerView = [[CPPickerView alloc]initWithData:nameAry];
+    [_leaveTypePickerView didFinishSelected:^(NSInteger row) {
+        NSLog(@"----------%@----------",nameAry[row]);
     }];
 }
 
